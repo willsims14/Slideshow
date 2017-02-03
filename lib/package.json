@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/willsims14/slideshow/issues"
   },
-  "homepage": "https://github.com/willsims14/slideshow#readme"
+  "homepage": "https://github.com/willsims14/slideshow#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "matchdep": "^1.0.1"
+  }
 }

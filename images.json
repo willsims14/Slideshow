@@ -1,0 +1,22 @@
+[
+	{
+		"url":"img/barbed.jpg",
+		"desc":"Beautiful barbed ear plug.",
+		"index": 0
+	},
+	{
+		"url":"img/blue.jpg",
+		"desc":"Your standard plug, but blue.",
+		"index": 1
+	},
+	{
+		"url":"img/bunch.jpg",
+		"desc":"Trying to tune out for a while? These ear plugs can help.",
+		"index": 2
+	},
+	{
+		"url":"img/deluxe.jpg",
+		"desc":"All natural, artisan-crafted deluxe plugs.",
+		"index": 3
+	}
+]

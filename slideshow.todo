@@ -1,0 +1,14 @@
+
+Slideshow:
+    Slideshows should have the following features:
+      ✔ Arrow buttons to navigate between images @done (17-02-03 15:05)
+      ✔ An auto-rotate feature that navigates through the images on a loop @done (17-02-03 15:41)
+      ✔ A caption for each image @done (17-02-03 15:05)
+      ✔ A fade in and fade out animation. @done (17-02-03 15:41)
+      ✔ A consistent height and width, regardless of the size or dimensions of the images being shown. @done (17-02-03 15:05)
+
+    Bonus:
+
+      ☐ Use JQuery AJAX to get your images from an external API. Try NASA's Astronomy Picture of the Day API or find your own.
+      ☐ Allow the user to change the animation from fade in/out to slide in/out.
+      ✔ Have captions only appear on hover. @done (17-02-03 15:05)

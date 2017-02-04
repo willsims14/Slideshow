@@ -65,10 +65,15 @@ img{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	margin-bottom: 1%;
+
 }
 
 
 #stopBtn{
-	margin-top: 5%;
+	margin-bottom: 1%;
+}
+
+#interval{
+	margin-bottom: 1%;
+
 }

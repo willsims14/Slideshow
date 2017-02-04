@@ -18,5 +18,10 @@
 		"url":"img/deluxe.jpg",
 		"desc":"All natural, artisan-crafted deluxe plugs.",
 		"index": 3
+	},
+	{
+		"url":"img/yellowPink.jpg",
+		"desc":"An aesthetic phenomenon. Block your noise in style.",
+		"index": 4
 	}
 ]

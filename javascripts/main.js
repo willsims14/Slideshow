@@ -1,11 +1,16 @@
 "use strict";
 
+// Global Variables
+var images = [];
+var currentIndex = 0;
+var numberOfImages = 0;
+
+// Event Handlers
 $("#right-arrow").click(next);
 $("#left-arrow").click(previous);
-
 $("#auto").click(queueRotation);
 
-
+// Hides all images (briefly) so they can be faded in
 $("img").hide();
 $("img").each(function(i){
 	$(this).fadeIn();
@@ -21,9 +26,12 @@ $.ajax({
 	url: "images.json"
 }).done(imagesLoaded);
 
-var images = [];
-var currentIndex = 0;
-var numberOfImages = 0;
+
+
+
+/*************************************/
+/************* Functions *************/
+/*************************************/
 
 // Event Handler for completed ajax request 
 function imagesLoaded(myImages){
@@ -48,16 +56,11 @@ function next(){
 
 // When user hits previous button
 function previous(){
-
-	
-
 	if(currentIndex - 1 < 0){
 		currentIndex = numberOfImages - 1;
-		// $("#main-image").attr("src", images[numberOfImages - 1].url);
 		setPicture(images[numberOfImages - 1]);
 	}else{
 		currentIndex--;
-		// $("#main-image").attr("src", images[currentIndex].url);
 		setPicture(images[currentIndex]);
 	}
 }
@@ -72,6 +75,7 @@ function setPicture(imageObj){
 		$(this).fadeOut();
 	});
 
+	// Set new picture
 	$("#main-image").attr("src", imageObj.url);
 	$("#imageDesc").html(imageObj.desc);
 
@@ -88,37 +92,52 @@ function show(event){
 }
 
 function hide(event){
-
 	$("#imageDesc").hide();
 }
 
+// * Starts chain of events to control slideshow
+// * When user decides to enter automated slideshow, the image descriptions
+// 		are always shown.
 function queueRotation(event){
-	var i = 0;
-	var timeout = setTimeout(startRotation, 2000);
 	$("#stopBtn").click(stopRotation);
+	$("#imageDesc").show();
+
+	var userInterval = parseInt($("#interval").find(":selected").val()) * 1000;
+
+	var timeout = setTimeout(startRotation, userInterval);
+
+
+	// Temporarily remove event listeners so image
+	//		descriptions are always shown during rotation
+	mainImage[0].onmouseover = show;
+	mainImage[0].onmouseout = show;
 
 
 	function startRotation(event){
-		console.log("i: ", i);
+		// Show/hide necesary buttons and image description
+		$("#auto").hide();
 		$("#stopBtn").show();
 		$("#imageDesc").show();
 		setPicture(images[i]);
-		timeout = setTimeout(startRotation, 2000);
+		timeout = setTimeout(startRotation, userInterval);
 		if(i + 1 === images.length){
 			i = 0;
 		}else{
 			i++;
 		}
 	}
-
+	// Whens user hits stop button, stop the rotation
 	function stopRotation(){
+		// Clear the interval and show/hide necesary buttons
 		clearInterval(timeout);
+		$("#imageDesc").hide();
 		$("#stopBtn").hide();
+		$("#auto").show();
 
+		// Reset mouse over/out events
+		mainImage[0].onmouseover = show;
+		mainImage[0].onmouseout = hide;
 	}
-
-
-
 }
 
 

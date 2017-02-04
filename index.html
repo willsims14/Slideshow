@@ -14,6 +14,13 @@
 	<header class="col-sm-12" id="header">
 		<h1>SlideShow</h1>
 		<div id="button-container"><input type="button" id="auto" value="Rotate"></div>
+		<input type="button" id="stopBtn" value="Stop" hidden="true"><br>
+		<select id="interval">
+			<option value="1">1 Second </option>
+			<option value="2">2 Seconds</option>
+			<option value="3">3 Seconds</option>
+			<option value="10">10 Seconds</option>
+		</select>
 	</header>
 
 	<div id="main-container" class="row">
@@ -33,7 +40,7 @@
 			<div id="image-container" class="col-sm-12">
 				<img src="#" id="main-image">
 				<span id="imageDesc"></span>
-				<input type="button" id="stopBtn" value="Stop" hidden="true">
+<!-- 				<input type="button" id="stopBtn" value="Stop" hidden="true"> -->
 			</div>
 
 		</div>
